@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signuper: MyString
+  time: 2019-11-01 13:02:50
+  specialcirumstances: MyText
+  date: 2019-11-01
+  reference: one
+
+two:
+  signuper: MyString
+  time: 2019-11-01 13:02:50
+  specialcirumstances: MyText
+  date: 2019-11-01
+  reference: two

@@ -1,7 +1,9 @@
-<h1>New Event</h1>
-<%= form_with scope: :event, url: events_path, local: true do |form| %>
+<h1>Edit article</h1>
 
-  <%-# Displays an errors with creating the form to the user and lets them fix it -%>
+<%= form_with(model: @event, local: true) do |form| %>
+
+  <%-# If there any errors in the event the user will be told and can fix them -%>
+  <%-# Edit isn't saved until the errors are fixed -%>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -15,7 +17,7 @@
       </ul>
     </div>
   <% end %>
-  <%-# Form outline showing the information collected in the form -%>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -40,7 +42,7 @@
   <p>
     <%= form.submit %>
   </p>
+
 <% end %>
 <%-# Link back to the Event List -%>
-
 <%= link_to 'Back', events_path %>

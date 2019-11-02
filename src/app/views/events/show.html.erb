@@ -1,3 +1,4 @@
+<%-# Displaying the various information about the Event -%>
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -22,3 +23,8 @@
   <strong>Date</strong>
   <%= @event.date %>
 </p>
+
+
+<%-# Links to the Event List and to the edit for the event showed -%>
+<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event) %>

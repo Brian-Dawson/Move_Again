@@ -1,4 +1,6 @@
 <h1>Listing events</h1>
+<%-# Index page for the events -%>
+<%-# Lists the various attributes of each event and then the Show, Edit, and Delete Buttons for each event -%>
 
 <%= link_to 'New Event', new_event_path %>
 <table>
@@ -18,6 +20,11 @@
       <td><%= event.time %></td>
       <td><%= event.date %></td>
       <td><%= link_to 'Show', event_path(event) %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event_path(event),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Home Screen', home_screen_index_path %>
