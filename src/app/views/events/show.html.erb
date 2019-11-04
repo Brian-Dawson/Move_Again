@@ -24,6 +24,16 @@
   <%= @event.date %>
 </p>
 
+<%-# Displaying the signups for the events and the form rendered via partials -%>
+
+<h2>Signups</h2>
+<% render @event.signups %>
+
+
+<h2>Signup:</h2>
+<%= render 'signups/form' %>
+
+
 
 <%-# Links to the Event List and to the edit for the event showed -%>
 <%= link_to 'Back', events_path %>

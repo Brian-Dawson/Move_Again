@@ -1,0 +1,25 @@
+<%-# Partial for displaying signup and all the information attached to it -%>
+<%-# Also contains delete button which is currently broken -%>
+<p>
+  <strong>Name:</strong>
+  <%= signup.name %>
+</p>
+
+<p>
+  <strong>Extra:</strong>
+  <%= signup.extra %>
+</p>
+<p>
+  <strong>Time:</strong>
+  <%= signup.time %>
+</p>
+<p>
+  <strong>Date:</strong>
+  <%= signup.date %>
+</p>
+
+<p>
+  <%= link_to 'Delete Signup', [signup.event, signup],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>

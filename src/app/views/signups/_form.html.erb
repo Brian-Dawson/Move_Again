@@ -1,0 +1,22 @@
+<%-# Partial for signup form where all the inputs are entered -%>
+<%= form_with(model: [ @event, @event.signups.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :extra %><br>
+    <%= form.text_area :extra %>
+  </p>
+  <p>
+    <%= form.label :time %>
+    <%= form.time_field :time %>
+  </p>
+  <p>
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

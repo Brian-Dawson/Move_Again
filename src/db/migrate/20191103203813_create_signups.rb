@@ -5,7 +5,7 @@ class CreateSignups < ActiveRecord::Migration[5.2]
       t.text :extra
       t.time :time
       t.date :date
-      t.references :event, null: false, foreign_key: true
+      t.references :event, foreign_key: true
 
       t.timestamps
     end
