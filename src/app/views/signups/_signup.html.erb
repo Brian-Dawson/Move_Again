@@ -23,6 +23,11 @@
 </p>
 
 <p>
+  <strong>Match:</strong>
+  <%= signup.user.email  %>
+</p>
+
+<p>
   <%= link_to 'Delete Signup', [signup.event, signup],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>

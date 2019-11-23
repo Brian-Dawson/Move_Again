@@ -4,6 +4,7 @@ class SignupsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @signup = @event.signups.create(signup_params)
+    @signup.save
     redirect_to event_path(@event)
   end
   # Destroys the signup from the event
@@ -18,6 +19,6 @@ class SignupsController < ApplicationController
   # Validates that the signup is legitimate
 
   def signup_params
-    params.require(:signup).permit(:name, :extra, :start_time, :end_time, :date)
+    params.require(:signup).permit(:name, :extra, :start_time, :end_time, :date, :user_id)
   end
 end

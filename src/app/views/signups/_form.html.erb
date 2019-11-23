@@ -1,5 +1,5 @@
 <%-# Partial for signup form where all the inputs are entered -%>
-<%= form_with(model: [ @event, @event.signups.build ], local: true) do |form| %>
+<%= form_with(model: [ event, event.signups.build ], local: true) do |form| %>
 
   <div class = "form">
     <div class = "field">
@@ -27,9 +27,18 @@
     <%= form.text_field :date %>
   </div>
     <br>
+    <div class = "field">
+      <%= form.label :user_id, "Volunteer" %><br>
+      <%= form.collection_select :user_id, User.where(volunteer: true).order(:email), :id, :email %>
+    </div>
+
+    <br>
+    <br>
 
   <div>
     <%= form.submit %>
   </div>
+  <br>
+  <br>
 <% end %>
 </div>
