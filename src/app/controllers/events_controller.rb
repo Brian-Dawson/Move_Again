@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   # Index displays all of the events in a list
+  before_action :authenticate_user!, except: [:show, :index]
   def index
     @events = Event.all
   end
@@ -50,6 +51,6 @@ class EventsController < ApplicationController
   private
   # Event parameters needed to create the event
   def event_params
-    params.require(:event).permit(:title, :description, :location, :time, :date)
+    params.require(:event).permit(:title, :description, :location, :start_time, :date, :end_time)
   end
 end

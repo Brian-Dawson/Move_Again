@@ -2,13 +2,16 @@
 <%-# Index page for the events -%>
 <%-# Lists the various attributes of each event and then the Show, Edit, and Delete Buttons for each event -%>
 
+<% if current_user && current_user.admin %>
 <%= link_to 'New Event', new_event_path %>
-<table>
+<% end %>
+<table class = "table table-striped">
   <tr>
     <th>Title</th>
     <th>Description</th>
     <th>Location</th>
-    <th>Time</th>
+    <th>Start Time</th>
+    <th>End Time</th>
     <th>Date</th>
   </tr>
 
@@ -17,14 +20,16 @@
       <td><%= event.title %></td>
       <td><%= event.description %></td>
       <td><%= event.location %></td>
-      <td><%= event.time %></td>
+      <td><%= event.start_time %></td>
+      <td><%= event.end_time %></td>
       <td><%= event.date %></td>
       <td><%= link_to 'Show', event_path(event) %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <% if current_user && current_user.admin %>
+      <td><%= link_to 'Edit Event', edit_event_path(event) %></td>
       <td><%= link_to 'Destroy', event_path(event),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
     </tr>
   <% end %>
 </table>
-<%= link_to 'Home Screen', home_screen_index_path %>

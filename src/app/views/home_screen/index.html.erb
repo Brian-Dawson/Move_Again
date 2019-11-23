@@ -1,3 +1,12 @@
-<h1>Home Screen</h1>
-<%= link_to 'Events', controller: 'events' %>
+
+<h1>Welcome to Move-Again</h1>
+<br>
+<p>This application will improve your ability to stay within the communities you love. </p>
+<br>
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <% else %>
+<%= link_to 'Sign up' , new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+  <% end %>
 <%-# Home Screen with link to events list -%>

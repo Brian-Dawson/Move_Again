@@ -6,7 +6,7 @@
     <div id="error_explanation">
       <h2>
         <%= pluralize(@event.errors.count, "error") %> prohibited
-        this article from being saved:
+        this event from being saved:
       </h2>
       <ul>
         <% @event.errors.full_messages.each do |msg| %>
@@ -16,31 +16,46 @@
     </div>
   <% end %>
   <%-# Form outline showing the information collected in the form -%>
-  <p>
+  <div class = "form">
+    <div class = "field">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-  </p>
-  <p>
+    </div>
+
+    <div class = "field">
     <%= form.label :description %><br>
     <%= form.text_area :description, size: "30x10" %>
-  </p>
-  <p>
+  </div>
+
+      <div class = "field">
     <%= form.label :location %><br>
     <%= form.text_field :location %>
-  </p>
-  <p>
-    <%= form.label :time %><br>
-    <%= form.time_field :time %>
-  </p>
-  <p>
+  </div>
+
+    <div class = "field">
+    <%= form.label :start_time %><br>
+    <%= form.time_field :start_time, {ampm: true} %>
+  </div>
+
+    <div class = "field">
+    <%= form.label :end_time %><br>
+    <%= form.time_field :end_time, {ampm: true} %>
+  </div>
+
+    <div class = "field">
     <%= form.label :date %><br>
     <%= form.date_field :date %>
-  </p>
+  </div>
 
-  <p>
+  <div>
+    <br>
     <%= form.submit %>
-  </p>
+    <br>
+  </div>
 <% end %>
+</div>
 <%-# Link back to the Event List -%>
-
+<br>
+<button type = "button" class = "btn btn-info btn-lg">
 <%= link_to 'Back', events_path %>
+</button>

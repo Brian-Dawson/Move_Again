@@ -1,22 +1,35 @@
 <%-# Partial for signup form where all the inputs are entered -%>
 <%= form_with(model: [ @event, @event.signups.build ], local: true) do |form| %>
-  <p>
+
+  <div class = "form">
+    <div class = "field">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-  </p>
-  <p>
+  </div>
+    <br>
+    <div class = "field">
     <%= form.label :extra %><br>
     <%= form.text_area :extra %>
-  </p>
-  <p>
-    <%= form.label :time %>
-    <%= form.time_field :time %>
-  </p>
-  <p>
-    <%= form.label :date %>
-    <%= form.date_field :date %>
-  </p>
-  <p>
+  </div>
+    <br>
+    <div class = "field">
+    <%= form.label :start_time %><br>
+    <%= form.time_field :start_time %>
+  </div>
+    <br>
+  <div class = "field">
+    <%= form.label :end_time %><br>
+    <%= form.time_field :end_time %>
+  </div>
+    <br>
+    <div class = "field">
+    <%= form.label :date %><br>
+    <%= form.text_field :date %>
+  </div>
+    <br>
+
+  <div>
     <%= form.submit %>
-  </p>
+  </div>
 <% end %>
+</div>

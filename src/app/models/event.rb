@@ -4,4 +4,13 @@ class Event < ApplicationRecord
   has_many :signups, dependent: :destroy
   validates :title, presence: true,
             length: { minimum: 4 }
+  validates :description, presence: true,
+            length: { minimum: 1 }
+  validates :date, presence: true,
+            length: { minimum: 8 }
+  validates :start_time, presence: true,
+            length: { minimum: 5 }
+  validates :end_time, presence: true,
+            length: { minimum: 5 }
+
 end

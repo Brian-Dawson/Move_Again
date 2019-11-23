@@ -1,4 +1,6 @@
 <%-# Displaying the various information about the Event -%>
+<h1>Event Information</h1>
+
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -15,8 +17,13 @@
 </p>
 
 <p>
-  <strong>Time</strong>
-  <%= @event.time %>
+  <strong>Start_Time</strong>
+  <%= @event.start_time %>
+</p>
+
+<p>
+  <strong>End_Time</strong>
+  <%= @event.end_time %>
 </p>
 
 <p>
@@ -26,15 +33,22 @@
 
 <%-# Displaying the signups for the events and the form rendered via partials -%>
 
+<% if current_user && current_user.admin || current_user && current_user.volunteer || current_user && current_user.attendee %>
 <h2>Signups</h2>
-<% render @event.signups %>
+  <br>
+<%= render @event.signups %>
+  <br>
 
 
-<h2>Signup:</h2>
+<h4>Signup:</h4>
 <%= render 'signups/form' %>
+
+  <% end %>
 
 
 
 <%-# Links to the Event List and to the edit for the event showed -%>
 <%= link_to 'Back', events_path %>
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_event_path(@event) %>
+<% end %>
