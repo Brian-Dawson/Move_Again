@@ -7,13 +7,13 @@ class Signup < ApplicationRecord
   # The validations for the various components of the signup
   # The name, start time, end time, date, and id of the volunteer selected are validated
   validates :name, presence: true,
-            length: { minimum: 2}
+            length: { in: 2..20}
   validates :start_time, presence: true,
-            length: { minimum: 4 }
+            length: { in: 4..8 }
   validates :end_time, presence: true,
-            length: { minimum: 4 }
+            length: { in: 4..8 }
   validates :date, presence: true,
-            length: { minimum: 6 }
+            length: { in: 6..9 }
   validates :user_id, presence: true
 
 end

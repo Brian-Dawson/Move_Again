@@ -3,15 +3,15 @@ class Event < ApplicationRecord
   # The events also have signups and when you delete the event you destroy the signups
   has_many :signups, dependent: :destroy
   validates :title, presence: true,
-            length: { minimum: 4 }
+            length: { in: 4..30 }
   validates :description, presence: true,
-            length: { minimum: 1 }
+            length: { in: 1..40 }
   validates :date, presence: true,
-            length: { minimum: 8 }
+            length: { in: 6..9 }
   validates :start_time, presence: true,
-            length: { minimum: 5 }
+            length: { in: 4..8 }
   validates :end_time, presence: true,
-            length: { minimum: 5 }
+            length: { in: 4..8 }
 
 end
 
