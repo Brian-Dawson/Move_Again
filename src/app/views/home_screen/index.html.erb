@@ -1,7 +1,12 @@
-
+<%-# Project name: Move_Again %>
+<%-# Description: Enables senior citizens to signup for events in their community %>
+<%-# Filename: /home_screen/index.html.erb %>
+<%-# Description: The main page for the website %>
+<%-# Last modified on: 11/23/19 %>
 <h1>Welcome to Move-Again</h1>
 <br>
 <p>This application will improve your ability to stay within the communities you love. </p>
+<p>Click on Events in the top corner in order to view events and signup for them.</p>
 <br>
 <% if current_user %>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

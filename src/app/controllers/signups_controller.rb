@@ -22,3 +22,10 @@ class SignupsController < ApplicationController
     params.require(:signup).permit(:name, :extra, :start_time, :end_time, :date, :user_id)
   end
 end
+
+# Project name: Move_Again
+# Description: Enables senior citizens to signup for events in their community
+# Filename: signups_controller.rb
+# Description: All of the various functions that can be done with the signups
+# Also has required parameters
+# Last modified on: 11/23/19

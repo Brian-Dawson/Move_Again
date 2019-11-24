@@ -54,3 +54,10 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :description, :location, :start_time, :date, :end_time)
   end
 end
+
+# Project name: Move_Again
+# Description: Enables senior citizens to signup for events in their community
+# Filename: events_controller.rb
+# Description: Controller for the events and all of the various things that can be done with each event
+# Also contains parameters needed for event to be created
+# Last modified on: 11/23/19

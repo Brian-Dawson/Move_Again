@@ -1,4 +1,10 @@
 <h1>New Event</h1>
+
+<%-# Project name: Move_Again %>
+<%-# Description: Enables senior citizens to signup for events in their community %>
+<%-# Filename: /events/new.html.erb %>
+<%-# Description: The form for creating a new event %>
+<%-# Last modified on: 11/23/19 %>
 <%= form_with scope: :event, url: events_path, local: true do |form| %>
 
   <%-# Displays an errors with creating the form to the user and lets them fix it -%>

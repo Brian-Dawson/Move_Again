@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  # Validates that the event has a title at least 4 characters long
+  # Validates various things about the event such as title or length
   # The events also have signups and when you delete the event you destroy the signups
   has_many :signups, dependent: :destroy
   validates :title, presence: true,
@@ -14,3 +14,9 @@ class Event < ApplicationRecord
             length: { minimum: 5 }
 
 end
+
+# Project name: Move_Again
+# Description: Enables senior citizens to signup for events in their community
+# Filename: event.rb
+# Description: Validates things about each event and provides associations
+# Last modified on: 11/23/19

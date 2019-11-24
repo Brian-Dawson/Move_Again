@@ -1,7 +1,13 @@
 <h1>Listing events</h1>
-<%-# Index page for the events -%>
-<%-# Lists the various attributes of each event and then the Show, Edit, and Delete Buttons for each event -%>
+<%-# Project name: Move_Again %>
+<%-# Description: Enables senior citizens to signup for events in their community %>
+<%-# Filename: /events/index.html.erb %>
+<%-# Description: The index page for the events showing them all in table %>
+<%-# Last modified on: 11/23/19 %>
 
+<%-# Index page for the events -%>
+<%-# Lists the various attributes of each event and then the Show, Edit, and Delete Buttons for each event depending on the permissions available -%>
+<%-# The admin account is the only one that can create events, edit and delete them -%>
 <% if current_user && current_user.admin %>
 <%= link_to 'New Event', new_event_path %>
 <% end %>
